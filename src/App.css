@@ -11,13 +11,14 @@ img {
 .cal-box {
   margin: 200px auto;
   border-radius: 10px;
-  width: 20%;
+  padding: 20px;
+  border: 1px solid brown;
+  max-width: 30%;
 }
 
 .display {
   margin: 10px auto;
   width: 200px;
-  min-width: 10px;
   font-size: 1.5rem;
   text-align: right;
 }
@@ -34,7 +35,7 @@ button {
   transition: transform 0.1s ease-in-out;
 }
 
-.submit{
+.submit {
   background-color: rgb(255, 194, 101);
 }
 
