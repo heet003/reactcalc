@@ -6,7 +6,17 @@ function App() {
 
   const handleClick = (event) => {
     var value = event.target.value;
-    displayText = displayText + value;
+    if (value == "%") {
+      displayText += "/100";
+    } else if (value == "√x") {
+      displayText = `Math.sqrt(${displayText})`;
+    } else if (value == "x²") {
+      displayText = `Math.pow(${displayText},2)`;
+    } else if (value == "⅟x") {
+      displayText = `1/${displayText}`;
+    } else {
+      displayText += value;
+    }
     setDisplayText(displayText);
   };
 
@@ -19,6 +29,7 @@ function App() {
     displayText = "";
     setDisplayText(displayText);
   };
+
   const clearCharacter = () => {
     displayText = displayText.slice(0, -1);
     setDisplayText(displayText);
@@ -31,7 +42,9 @@ function App() {
         <div className="controls">
           {/* 1 */}
           <div>
-            <button>%</button>
+            <button value="%" onClick={handleClick}>
+              %
+            </button>
             <button onClick={clearDisplay}>CE</button>
             <button onClick={clearDisplay}>C</button>
             <button onClick={clearCharacter}>
@@ -40,9 +53,15 @@ function App() {
           </div>
           {/* 2 */}
           <div>
-            <button>⅟x</button>
-            <button>x²</button>
-            <button>√x</button>
+            <button value="⅟x" onClick={handleClick}>
+              ⅟x
+            </button>
+            <button value="x²" onClick={handleClick}>
+              x²
+            </button>
+            <button value="√x" onClick={handleClick}>
+              √x
+            </button>
             <button value="/" onClick={handleClick}>
               ÷
             </button>
