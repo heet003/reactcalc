@@ -31,7 +31,7 @@ button {
   border-radius: 10px;
   border: 1px solid white;
   box-shadow: 1px 1px 1px 1px grey;
-  background-color: rgb(255, 144, 144);
+  background-color: rgb(255, 104, 104);
   transition: transform 0.1s ease-in-out;
 }
 

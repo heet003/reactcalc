@@ -6,13 +6,13 @@ function App() {
 
   const handleClick = (event) => {
     var value = event.target.value;
-    if (value == "%") {
+    if (value === "%") {
       displayText += "/100";
-    } else if (value == "√x") {
+    } else if (value === "√x") {
       displayText = `Math.sqrt(${displayText})`;
-    } else if (value == "x²") {
+    } else if (value === "x²") {
       displayText = `Math.pow(${displayText},2)`;
-    } else if (value == "⅟x") {
+    } else if (value === "⅟x") {
       displayText = `1/${displayText}`;
     } else {
       displayText += value;
