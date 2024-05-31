@@ -40,5 +40,5 @@ button {
 }
 
 button:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }

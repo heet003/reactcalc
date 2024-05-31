@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 function App() {
   var [displayText, setDisplayText] = useState("");
-  var str = "";
 
   const handleClick = (event) => {
     var value = event.target.value;
@@ -12,12 +11,17 @@ function App() {
   };
 
   const showResult = () => {
-    try {
-      const result = eval(displayText);
-      setDisplayText(result);
-    } catch (error) {
-      setDisplayText(error);
-    }
+    const result = eval(displayText);
+    setDisplayText(result);
+  };
+
+  const clearDisplay = () => {
+    displayText = "";
+    setDisplayText(displayText);
+  };
+  const clearCharacter = () => {
+    displayText = displayText.slice(0, -1);
+    setDisplayText(displayText);
   };
 
   return (
@@ -28,9 +32,9 @@ function App() {
           {/* 1 */}
           <div>
             <button>%</button>
-            <button>CE</button>
-            <button>C</button>
-            <button>
+            <button onClick={clearDisplay}>CE</button>
+            <button onClick={clearDisplay}>C</button>
+            <button onClick={clearCharacter}>
               <img src="./clear.png" alt="Clear"></img>
             </button>
           </div>
